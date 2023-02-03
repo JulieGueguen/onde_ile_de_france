@@ -45,11 +45,6 @@ library(data.table)
 `%ni%` <- Negate(`%in%`)
 
 load(file = "../data/processed_data/map_data_cartoMod.RData")
-
-propluvia <- 
-  sf::st_read("../data/raw_data/zonesAlerte.gpkg", crs = 2154) #%>% 
-  #dplyr::select(-Niveau)
-
 load(file = "../data/raw_data/departement_shape.RData")
 
 stations_onde_geo_map1 <-

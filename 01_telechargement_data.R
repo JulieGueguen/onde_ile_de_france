@@ -27,9 +27,11 @@ library(data.table)
 
 ### Selection des départements ----
 
-#dpt_sel <- c('14','27','50','61','76')
-dpt_sel <- c('22','29','35','56')
-#dpt_sel <- c('60','62','80','59','02')
+dpt_sel <- c('22','29','35','56') #BZH
+
+#dpt_sel <- c('14','27','50','61','76') #NORMANDIE
+#dpt_sel <- c('60','62','80','59','02') #HDF
+#dpt_sel <- c('44','49','53','72','85') #PDL
 
 ### Date du jour ----
 date_jour <- as.character(format(Sys.time(),"%Y-%m-%d"))
@@ -375,6 +377,16 @@ duree_assecs_df <-
                         paste0(max_nb_mois_assec, " mois cons\u00e9cutifs")))
 
 #####################################
+## Donnees Propluvia
+load(file = 'data/raw_data/propluvia_zone.Rdata')
+
+propluvia <-
+  propluvia_zone %>% 
+  filter(type = 'SUP') %>% 
+  filter(dpt %in% dplyr::any_of(dpt_sel))
+  
+
+#####################################
 # Sauvegarde des objets pour page Rmd
 save(stations_onde_geo_usuelles, 
      graphiques_int_3mod,
@@ -385,4 +397,5 @@ save(stations_onde_geo_usuelles,
      df_categ_obs_4mod,
      heatmap_df,
      duree_assecs_df,
+     propluvia_reg,
      file = "data/processed_data/map_data_cartoMod.RData")                     
