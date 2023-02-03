@@ -27,10 +27,10 @@ library(data.table)
 
 ### Selection des départements ----
 
-dpt_sel <- c('22','29','35','56') #BZH
+#dpt_sel <- c('22','29','35','56') #BZH
 
 #dpt_sel <- c('14','27','50','61','76') #NORMANDIE
-#dpt_sel <- c('60','62','80','59','02') #HDF
+dpt_sel <- c('60','62','80','59','02') #HDF
 #dpt_sel <- c('44','49','53','72','85') #PDL
 
 ### Date du jour ----
@@ -382,7 +382,7 @@ load(file = 'data/raw_data/propluvia_zone.Rdata')
 
 propluvia <-
   propluvia_zone %>% 
-  filter(type = 'SUP') %>% 
+  filter(type == 'SUP') %>% 
   filter(dpt %in% dplyr::any_of(dpt_sel))
   
 
