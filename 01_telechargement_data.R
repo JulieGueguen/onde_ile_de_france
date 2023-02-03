@@ -397,5 +397,5 @@ save(stations_onde_geo_usuelles,
      df_categ_obs_4mod,
      heatmap_df,
      duree_assecs_df,
-     propluvia_reg,
+     propluvia,
      file = "data/processed_data/map_data_cartoMod.RData")                     
