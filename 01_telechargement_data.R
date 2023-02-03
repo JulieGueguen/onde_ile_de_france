@@ -383,7 +383,7 @@ load(file = 'data/raw_data/propluvia_zone.Rdata')
 propluvia <-
   propluvia_zone %>% 
   filter(type == 'SUP') %>% 
-  filter(dpt %in% dplyr::any_of(dpt_sel))
+  filter(dpt %in% dpt_sel)
   
 
 #####################################
