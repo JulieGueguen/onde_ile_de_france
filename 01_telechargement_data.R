@@ -30,8 +30,8 @@ library(data.table)
 #dpt_sel <- c('22','29','35','56') #BZH
 
 #dpt_sel <- c('14','27','50','61','76') #NORMANDIE
-dpt_sel <- c('60','62','80','59','02') #HDF
-#dpt_sel <- c('44','49','53','72','85') #PDL
+#dpt_sel <- c('60','62','80','59','02') #HDF
+dpt_sel <- c('44','49','53','72','85') #PDL
 
 ### Date du jour ----
 date_jour <- as.character(format(Sys.time(),"%Y-%m-%d"))
